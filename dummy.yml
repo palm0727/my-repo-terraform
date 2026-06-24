@@ -1,16 +1,19 @@
 name: Dummy workflow
 
-on: workflow_Dispatch
+on:
+  workflow_dispatch:
 
 jobs:
-  buld:
+  build:
     runs-on: self-hosted
-    stpes:
-    - uses: actions/checkout@v6
-    - name: Run a one-line script
-      run: echo "Hello world"
 
-    - name: Run a multi-line script
-      run: 
-      echo: "add other actions to build"
-      echo: "test and deploy your ptoject"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo "Hello world"
+
+      - name: Run a multi-line script
+        run: |
+          echo "add other actions to build"
+          echo "test and deploy your project"
